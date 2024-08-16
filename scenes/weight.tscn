@@ -1,16 +1,17 @@
 [gd_scene load_steps=4 format=3 uid="uid://dorshqn1q31xv"]
 
 [ext_resource type="Script" path="res://scripts/weight.gd" id="1_nio03"]
-[ext_resource type="Texture2D" uid="uid://dg2h3cj7g7g7n" path="res://assets/black-kettlebell-clipart.webp" id="1_oggre"]
+[ext_resource type="Texture2D" uid="uid://dg2h3cj7g7g7n" path="res://assets/black-kettlebell-clipart.webp" id="2_6yfap"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_meiol"]
 size = Vector2(100, 150)
 
 [node name="Weight" type="Area2D"]
+z_index = 1
 script = ExtResource("1_nio03")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_oggre")
+texture = ExtResource("2_6yfap")
 region_enabled = true
 region_rect = Rect2(3.02009, 84.333, 106.121, 140.554)
 

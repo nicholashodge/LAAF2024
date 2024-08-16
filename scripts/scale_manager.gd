@@ -13,8 +13,8 @@ func _ready():
 	setup()
 
 func setup():
-	left_scale = %LeftSide
-	right_scale = %RightSide
+	#left_scale = %LeftSide
+	#right_scale = %RightSide
 	generate_weights(3)
 
 func generate_weights(length:int):

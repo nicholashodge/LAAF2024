@@ -1,0 +1,14 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1723846614
+icon.svg::CompressedTexture2D::522374892597326165::1723836062::1723846615::1::::<><>::
+::res://assets/::1723842837
+black-kettlebell-clipart.webp::CompressedTexture2D::7636608453858971141::1723837605::1723846615::1::::<><>::
+scale.jpg::CompressedTexture2D::4409069873717050566::1723842809::1723846615::1::::<><>::
+::res://scenes/::1723846150
+game.tscn::PackedScene::8617369671194488353::1723845680::0::1::::<><>::uid://clmxkt3itiuef::::res://scenes/scale.tscn
+scale.tscn::PackedScene::5571106570813341133::1723845681::0::1::::<><>::uid://b3210btf3qsc1::::res://assets/scale.jpg
+weight.tscn::PackedScene::8178106551917796843::1723846150::0::1::::<><>::res://scripts/weight.gd<>uid://dg2h3cj7g7g7n::::res://assets/black-kettlebell-clipart.webp
+::res://scripts/::1723846120
+drag_manager.gd::GDScript::-1::1723844184::0::1::::<>Node<>::
+scale_manager.gd::GDScript::-1::1723845309::0::1::::<>Node2D<>::
+weight.gd::GDScript::-1::1723846120::0::1::::WeightObject<>Area2D<>::
