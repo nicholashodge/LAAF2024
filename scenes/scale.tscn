@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://clmxkt3itiuef"]
+
+[ext_resource type="Texture2D" uid="uid://b3210btf3qsc1" path="res://assets/scale.jpg" id="1_mmbqs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hvw2h"]
+size = Vector2(200, 300)
+
+[node name="Scale" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_mmbqs")
+
+[node name="LeftSide" type="Area2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(-204, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftSide"]
+shape = SubResource("RectangleShape2D_hvw2h")
+
+[node name="RightSide" type="Area2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(204, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightSide"]
+shape = SubResource("RectangleShape2D_hvw2h")
