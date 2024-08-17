@@ -1,5 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://du1k24kq0h70h"]
+[gd_scene load_steps=3 format=3 uid="uid://du1k24kq0h70h"]
 
+[ext_resource type="PackedScene" uid="uid://c2qi1c2yvowxx" path="res://scenes/book.tscn" id="2_ia2mo"]
 [ext_resource type="PackedScene" uid="uid://clmxkt3itiuef" path="res://scenes/scale.tscn" id="3_sk0eq"]
 
 [node name="Game" type="Node2D"]
@@ -9,3 +10,7 @@ z_index = -1
 position = Vector2(-251, 0)
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" parent="CanvasLayer" instance=ExtResource("2_ia2mo")]

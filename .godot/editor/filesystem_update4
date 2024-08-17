@@ -1,5 +1,5 @@
 res://scenes/game.tscn
-res://scripts/weight.gd
 res://scenes/scale.tscn
 res://scenes/weight.tscn
-res://scripts/scale_manager.gd
+res://scenes/book.tscn
+res://scripts/book.gd

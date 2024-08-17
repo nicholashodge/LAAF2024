@@ -1,0 +1,15 @@
+CanvasLayer
+Button
+TextEdit
+HBoxContainer
+TextureRect
+Container
+RigidBody2D
+StaticBody2D
+Sprite2D
+CollisionShape2D
+PinJoint2D
+Skeleton2D
+Bone2D
+Node2D
+AnimationPlayer

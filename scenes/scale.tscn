@@ -1,9 +1,23 @@
-[gd_scene load_steps=3 format=3 uid="uid://clmxkt3itiuef"]
+[gd_scene load_steps=9 format=3 uid="uid://clmxkt3itiuef"]
 
 [ext_resource type="Texture2D" uid="uid://b3210btf3qsc1" path="res://assets/scale.jpg" id="1_mmbqs"]
+[ext_resource type="Script" path="res://rotationtest.gd" id="2_lxt3f"]
+[ext_resource type="Script" path="res://scripts/left_side.gd" id="2_to88m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hvw2h"]
 size = Vector2(200, 300)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_c76xh"]
+size = Vector2(500, 15)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2w5st"]
+size = Vector2(500, 15)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_d2f85"]
+size = Vector2(200, 15)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tycyw"]
+size = Vector2(199, 15)
 
 [node name="Scale" type="Node2D"]
 
@@ -13,6 +27,7 @@ texture = ExtResource("1_mmbqs")
 [node name="LeftSide" type="Area2D" parent="."]
 unique_name_in_owner = true
 position = Vector2(-204, 0)
+script = ExtResource("2_to88m")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LeftSide"]
 shape = SubResource("RectangleShape2D_hvw2h")
@@ -23,3 +38,102 @@ position = Vector2(204, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RightSide"]
 shape = SubResource("RectangleShape2D_hvw2h")
+
+[node name="PinJoint2D" type="PinJoint2D" parent="."]
+position = Vector2(494, -181)
+node_a = NodePath("../left")
+node_b = NodePath("../top")
+bias = 0.9
+
+[node name="PinJoint2D2" type="PinJoint2D" parent="."]
+position = Vector2(981, -178)
+node_a = NodePath("../right")
+node_b = NodePath("../top")
+bias = 0.9
+
+[node name="PinJoint2D5" type="PinJoint2D" parent="."]
+position = Vector2(985, -178)
+node_a = NodePath("../right2")
+node_b = NodePath("../top")
+bias = 0.9
+softness = 0.5
+
+[node name="PinJoint2D3" type="PinJoint2D" parent="."]
+position = Vector2(902, 0)
+node_a = NodePath("../right3")
+node_b = NodePath("../right")
+bias = 0.9
+
+[node name="PinJoint2D4" type="PinJoint2D" parent="."]
+position = Vector2(1063, 2)
+node_a = NodePath("../right2")
+node_b = NodePath("../right3")
+bias = 0.9
+
+[node name="top" type="StaticBody2D" parent="."]
+position = Vector2(726, -177)
+script = ExtResource("2_lxt3f")
+
+[node name="Sprite2D2" type="Sprite2D" parent="top"]
+position = Vector2(12, -3)
+texture = SubResource("PlaceholderTexture2D_c76xh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="top"]
+position = Vector2(12, -2.5)
+shape = SubResource("RectangleShape2D_2w5st")
+
+[node name="left" type="RigidBody2D" parent="."]
+position = Vector2(330, -19)
+rotation = 2.35619
+mass = 17.78
+gravity_scale = 5.205
+
+[node name="Sprite2D2" type="Sprite2D" parent="left"]
+position = Vector2(-131, -2.99999)
+texture = SubResource("PlaceholderTexture2D_d2f85")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="left"]
+position = Vector2(-132, -3)
+shape = SubResource("RectangleShape2D_tycyw")
+
+[node name="right" type="RigidBody2D" parent="."]
+position = Vector2(885, 29)
+rotation = 1.99183
+mass = 4.7
+gravity_scale = 4.59
+
+[node name="Sprite2D2" type="Sprite2D" parent="right"]
+position = Vector2(-131, -2.99999)
+texture = SubResource("PlaceholderTexture2D_d2f85")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="right"]
+position = Vector2(-132, -3)
+shape = SubResource("RectangleShape2D_tycyw")
+
+[node name="right2" type="RigidBody2D" parent="."]
+position = Vector2(1072, 28)
+rotation = 1.14619
+mass = 4.7
+gravity_scale = 4.59
+
+[node name="Sprite2D2" type="Sprite2D" parent="right2"]
+position = Vector2(-131, -2.99999)
+texture = SubResource("PlaceholderTexture2D_d2f85")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="right2"]
+position = Vector2(-132, -3)
+shape = SubResource("RectangleShape2D_tycyw")
+
+[node name="right3" type="RigidBody2D" parent="."]
+position = Vector2(1116, 5)
+rotation = 0.00021112
+mass = 4.7
+gravity_scale = 4.59
+
+[node name="Sprite2D2" type="Sprite2D" parent="right3"]
+position = Vector2(-131, -2.99999)
+texture = SubResource("PlaceholderTexture2D_d2f85")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="right3"]
+position = Vector2(-132, -3)
+shape = SubResource("RectangleShape2D_tycyw")

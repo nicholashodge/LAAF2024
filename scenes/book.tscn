@@ -1,0 +1,123 @@
+[gd_scene load_steps=6 format=3 uid="uid://c2qi1c2yvowxx"]
+
+[ext_resource type="Script" path="res://scripts/book.gd" id="1_qje7g"]
+[ext_resource type="Texture2D" uid="uid://sxdhblww7xs1" path="res://assets/Untitled_Artwork 2.png" id="2_6oth8"]
+[ext_resource type="Texture2D" uid="uid://b7xf3xr52wgcm" path="res://assets/left-arrow.png" id="3_7fux7"]
+[ext_resource type="Texture2D" uid="uid://d0wpiqfpx0h7w" path="res://assets/right-arrow.png" id="4_yqyqh"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7ub7t"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Container" type="HBoxContainer" parent="." node_paths=PackedStringArray("left_text_box", "right_text_box", "left_button", "right_button")]
+layout_mode = 0
+offset_left = 765.0
+offset_top = 615.0
+offset_right = 1470.0
+offset_bottom = 1065.0
+tooltip_text = "Translation Guide"
+theme_override_constants/separation = 1
+alignment = 1
+script = ExtResource("1_qje7g")
+left_text_box = NodePath("TextureRect/TextEdit")
+right_text_box = NodePath("TextureRect2/TextEdit")
+left_button = NodePath("TextureRect/LastPage")
+right_button = NodePath("TextureRect2/NextPage")
+
+[node name="TextureRect" type="TextureRect" parent="Container"]
+layout_mode = 2
+texture = ExtResource("2_6oth8")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="TextEdit" type="TextEdit" parent="Container/TextureRect"]
+modulate = Color(0.162413, 0.131519, 0.0892588, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.141
+anchor_top = 0.018
+anchor_right = 0.897
+anchor_bottom = 0.982
+offset_left = -0.0295448
+offset_top = -0.1
+offset_right = 0.0886536
+offset_bottom = 0.0999756
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/line_spacing = 5
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_7ub7t")
+text = "test
+test
+test"
+wrap_mode = 1
+
+[node name="LastPage" type="Button" parent="Container/TextureRect"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -42.0
+offset_right = 42.0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 50
+icon = ExtResource("3_7fux7")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="TextureRect2" type="TextureRect" parent="Container"]
+layout_mode = 2
+texture = ExtResource("2_6oth8")
+expand_mode = 3
+stretch_mode = 4
+flip_h = true
+
+[node name="TextEdit" type="TextEdit" parent="Container/TextureRect2"]
+modulate = Color(0.162413, 0.131519, 0.0892588, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.095
+anchor_top = 0.039
+anchor_right = 0.845
+anchor_bottom = 0.982
+offset_left = -0.0340919
+offset_top = -9.55
+offset_right = 0.170441
+offset_bottom = 0.0999756
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/line_spacing = 5
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_7ub7t")
+text = "test
+test
+test"
+wrap_mode = 1
+
+[node name="NextPage" type="Button" parent="Container/TextureRect2"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -42.0
+offset_top = -42.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 50
+icon = ExtResource("4_yqyqh")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[connection signal="pressed" from="Container/TextureRect/LastPage" to="Container" method="_on_last_page_pressed"]
+[connection signal="pressed" from="Container/TextureRect2/NextPage" to="Container" method="_on_next_page_pressed"]
