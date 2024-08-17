@@ -1,0 +1,135 @@
+[gd_scene load_steps=6 format=3 uid="uid://cudn4nx828xfx"]
+
+[ext_resource type="Texture2D" uid="uid://vdd8fmrwn7ad" path="res://assets/scroll.png" id="1_btqj3"]
+[ext_resource type="Script" path="res://scripts/scroll.gd" id="1_mchdg"]
+
+[sub_resource type="Animation" id="Animation_dholc"]
+resource_name = "open_scroll"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Top:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1.5, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Top:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-277, -0.25, 0, 0.25, 0, -1242, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Bottom:position:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Bottom:position:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(363, -0.25, 0, 0.25, 0, 1271, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1)
+}
+
+[sub_resource type="Animation" id="Animation_0qgp8"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Top:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Top:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-277, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Bottom:position:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Bottom:position:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(363, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5fm0c"]
+_data = {
+"RESET": SubResource("Animation_0qgp8"),
+"open_scroll": SubResource("Animation_dholc")
+}
+
+[node name="Scroll" type="Node2D" node_paths=PackedStringArray("animator")]
+scale = Vector2(0.2, 0.2)
+script = ExtResource("1_mchdg")
+animator = NodePath("AnimationPlayer")
+
+[node name="Top" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(0, -277)
+texture = ExtResource("1_btqj3")
+region_enabled = true
+region_rect = Rect2(344.79, 112.875, 2521.54, 729.12)
+
+[node name="Bottom" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(0, 363)
+texture = ExtResource("1_btqj3")
+region_enabled = true
+region_rect = Rect2(336.064, 934.688, 2532.93, 732.918)
+
+[node name="Middle" type="Sprite2D" parent="."]
+visibility_layer = 2
+position = Vector2(0, -20)
+texture = ExtResource("1_btqj3")
+region_enabled = true
+region_rect = Rect2(510.75, 1827.1, 2278.5, 2130.9)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_5fm0c")
+}

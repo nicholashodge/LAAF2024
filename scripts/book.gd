@@ -1,9 +1,10 @@
 extends Control
 
-@export var left_text_box:TextEdit
-@export var right_text_box:TextEdit
+@export var left_text_box:RichTextLabel
+@export var right_text_box:RichTextLabel
 @export var left_button:Button
 @export var right_button:Button
+@export var page_turn_sound:AudioStreamPlayer2D
 
 var current_left_page = 0
 
@@ -24,7 +25,7 @@ func _ready():
 	right_text_box.text = page_data[1]
 
 func _on_last_page_pressed():
-	print("go back a page")
+	page_turn_sound.play()
 	current_left_page -= 2
 	left_text_box.text = page_data[current_left_page]
 	right_text_box.text = page_data[current_left_page + 1]
@@ -33,8 +34,7 @@ func _on_last_page_pressed():
 		left_button.visible = false
 
 func _on_next_page_pressed():
-	print("go forward a page")
-	#play sound
+	page_turn_sound.play()
 	current_left_page += 2
 	left_text_box.text = page_data[current_left_page]
 	right_text_box.text = page_data[current_left_page + 1]

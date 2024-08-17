@@ -3,19 +3,21 @@ ea4bc82a6ad023ab7ee23ee620429895
 icon.svg::CompressedTexture2D::522374892597326165::1723836062::1723846615::1::::<><>::
 rotationtest.gd::GDScript::-1::1723911428::0::1::::<>StaticBody2D<>::
 test.tscn::PackedScene::5505219075193140594::1723869922::0::1::::<><>::uid://hpbo5rqrw87r::::res://icon.svg
-::res://assets/::1723914675
+::res://assets/::1723919220
 black-kettlebell-clipart.webp::CompressedTexture2D::7636608453858971141::1723837605::1723846615::1::::<><>::
+bookpage.png::CompressedTexture2D::1929587237423217275::1723913321::1723919227::1::::<><>::
 left-arrow.png::CompressedTexture2D::4680299191345425480::1723914673::1723914675::1::::<><>::
+pageturn-102978.mp3::AudioStreamMP3::3122621050053614395::1723917604::1723917647::1::::<><>::
 right-arrow.png::CompressedTexture2D::8960325342673047242::1723914360::1723914376::1::::<><>::
 scale.jpg::CompressedTexture2D::4409069873717050566::1723842809::1723846615::1::::<><>::
-Untitled_Artwork 2.png::CompressedTexture2D::1311074595910053818::1723913321::1723913436::1::::<><>::
-::res://scenes/::1723915131
-book.tscn::PackedScene::6701502504137201149::1723914991::0::1::::<><>::res://scripts/book.gd<>uid://sxdhblww7xs1::::res://assets/Untitled_Artwork 2.png<>uid://b7xf3xr52wgcm::::res://assets/left-arrow.png<>uid://d0wpiqfpx0h7w::::res://assets/right-arrow.png
-game.tscn::PackedScene::8617369671194488353::1723915131::0::1::::<><>::uid://c2qi1c2yvowxx::::res://scenes/book.tscn<>uid://clmxkt3itiuef::::res://scenes/scale.tscn
-scale.tscn::PackedScene::5571106570813341133::1723914990::0::1::::<><>::uid://b3210btf3qsc1::::res://assets/scale.jpg<>res://rotationtest.gd<>res://scripts/left_side.gd
-weight.tscn::PackedScene::8178106551917796843::1723914990::0::1::::<><>::res://scripts/weight.gd<>uid://dg2h3cj7g7g7n::::res://assets/black-kettlebell-clipart.webp
-::res://scripts/::1723914964
-book.gd::GDScript::-1::1723914964::0::1::::<>Control<>::
+scroll.png::CompressedTexture2D::1480400213794773611::1723919159::1723919229::1::::<><>::
+::res://scenes/::1723917786
+book.tscn::PackedScene::6701502504137201149::1723917786::0::1::::<><>::res://scripts/book.gd<>uid://sxdhblww7xs1::::res://assets/Untitled_Artwork 2.png<>uid://b7xf3xr52wgcm::::res://assets/left-arrow.png<>uid://d0wpiqfpx0h7w::::res://assets/right-arrow.png<>uid://bkqvd3awx8fwd::::res://assets/pageturn-102978.mp3
+game.tscn::PackedScene::8617369671194488353::1723917786::0::1::::<><>::uid://c2qi1c2yvowxx::::res://scenes/book.tscn<>uid://clmxkt3itiuef::::res://scenes/scale.tscn
+scale.tscn::PackedScene::5571106570813341133::1723917786::0::1::::<><>::uid://b3210btf3qsc1::::res://assets/scale.jpg<>res://rotationtest.gd<>res://scripts/left_side.gd
+weight.tscn::PackedScene::8178106551917796843::1723917786::0::1::::<><>::res://scripts/weight.gd<>uid://dg2h3cj7g7g7n::::res://assets/black-kettlebell-clipart.webp
+::res://scripts/::1723917773
+book.gd::GDScript::-1::1723917773::0::1::::<>Control<>::
 drag_manager.gd::GDScript::-1::1723844184::0::1::::<>Node<>::
 left_side.gd::GDScript::-1::1723912911::0::1::::<>Area2D<>::
 scale_manager.gd::GDScript::-1::1723847368::0::1::::<>Node2D<>::
