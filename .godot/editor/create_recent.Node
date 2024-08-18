@@ -1,8 +1,8 @@
+RichTextLabel
 Sprite2D
 AnimationPlayer
 PanelContainer
 TextureRect
-RichTextLabel
 Container
 RigidBody2D
 AudioStreamPlayer2D

@@ -1,7 +1,6 @@
+res://scenes/scroll.tscn
 res://scenes/game.tscn
 res://scenes/scale.tscn
 res://scenes/weight.tscn
 res://scenes/book.tscn
-res://scripts/book.gd
-res://scenes/scroll.tscn
 res://scripts/scroll.gd
