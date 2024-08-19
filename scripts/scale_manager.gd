@@ -6,10 +6,13 @@ var weight_prefab = preload("res://scenes/weight.tscn")
 var active_weight:WeightObject
 
 var number_of_weights := 1 #can change for different levels (maybe 1-2 for first level)
+@onready var left_slots = get_tree().get_nodes_in_group("left_slots")
+@onready var right_slots = get_tree().get_nodes_in_group("right_slots")
 signal scales_changed
 
 func setup():
 	generate_weights(number_of_weights)
+	generate_slots()
 
 func generate_weights(length:int):
 	#instantiate sites and add to instances deck
@@ -21,6 +24,12 @@ func generate_weights(length:int):
 		new_weight.cancelled.connect(_on_weight_cancelled)
 		#instanced_weight_deck.append(new_weight)
 		get_tree().get_root().get_node("Game").add_child.call_deferred(new_weight)
+
+func generate_slots():
+	for i in left_slots:
+		i.set_meta("Full", false)
+	for j in right_slots:
+		j.set_meta("Full", false)
 
 func _on_weight_selected(moving_weight:WeightObject):
 	active_weight = moving_weight
@@ -58,7 +67,7 @@ func _on_weight_released():
 			active_weight.position -= active_weight.global_position
 			print(active_weight.global_position)
 			make_weight_child_of_scale(active_weight, closest_area)
-
+			#find_next_slot(active_weight)
 				
 			active_weight = null
 			
@@ -77,6 +86,16 @@ func make_weight_child_of_scale(node, new_parent):
 	old_parent.remove_child(node)
 	new_parent.add_child(node)
 	node.set_owner(new_parent)
+
+#find the next slot, mark it as taken, and move the object
+#TODO: differentiate between left and right slots taken
+#func find_next_slot(object):
+	#for i in left_slots:
+		#if i.get_meta("Full", true):
+			#print(str(i) + " is taken")
+		#else:
+			#object.position += i.position
+			#i.set_meta("Full", true)
 
 enum Zone {
 	SPAWN,

@@ -76,6 +76,30 @@ position = Vector2(0, 44)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Left/LeftSide"]
 shape = SubResource("RectangleShape2D_hvw2h")
 
+[node name="Slot1" type="Marker2D" parent="Left/LeftSide" groups=["left_slots"]]
+position = Vector2(-40, 60)
+metadata/Full = false
+
+[node name="Slot2" type="Marker2D" parent="Left/LeftSide" groups=["left_slots"]]
+position = Vector2(0, 60)
+metadata/Full = false
+
+[node name="Slot3" type="Marker2D" parent="Left/LeftSide" groups=["left_slots"]]
+position = Vector2(40, 60)
+metadata/Full = false
+
+[node name="Slot4" type="Marker2D" parent="Left/LeftSide" groups=["left_slots"]]
+position = Vector2(-20, 20)
+metadata/Full = false
+
+[node name="Slot5" type="Marker2D" parent="Left/LeftSide" groups=["left_slots"]]
+position = Vector2(20, 20)
+metadata/Full = false
+
+[node name="Slot6" type="Marker2D" parent="Left/LeftSide" groups=["left_slots"]]
+position = Vector2(0, -20)
+metadata/Full = false
+
 [node name="Right" type="RigidBody2D" parent="."]
 position = Vector2(984, -41)
 gravity_scale = 50.0
@@ -97,6 +121,30 @@ position = Vector2(-4, 41)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Right/RightSide"]
 shape = SubResource("RectangleShape2D_hvw2h")
+
+[node name="Slot1" type="Marker2D" parent="Right/RightSide" groups=["right_slots"]]
+position = Vector2(-40, 60)
+metadata/Full = false
+
+[node name="Slot2" type="Marker2D" parent="Right/RightSide" groups=["right_slots"]]
+position = Vector2(0, 60)
+metadata/Full = false
+
+[node name="Slot3" type="Marker2D" parent="Right/RightSide" groups=["right_slots"]]
+position = Vector2(40, 60)
+metadata/Full = false
+
+[node name="Slot4" type="Marker2D" parent="Right/RightSide" groups=["right_slots"]]
+position = Vector2(-20, 20)
+metadata/Full = false
+
+[node name="Slot5" type="Marker2D" parent="Right/RightSide" groups=["right_slots"]]
+position = Vector2(20, 20)
+metadata/Full = false
+
+[node name="Slot6" type="Marker2D" parent="Right/RightSide" groups=["right_slots"]]
+position = Vector2(0, -20)
+metadata/Full = false
 
 [node name="Base" type="Sprite2D" parent="."]
 position = Vector2(707, -6.99999)
