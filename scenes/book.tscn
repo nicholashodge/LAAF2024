@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://c2qi1c2yvowxx"]
+[gd_scene load_steps=10 format=3 uid="uid://c2qi1c2yvowxx"]
 
 [ext_resource type="Script" path="res://scripts/book.gd" id="1_qje7g"]
 [ext_resource type="Texture2D" uid="uid://sxdhblww7xs1" path="res://assets/Untitled_Artwork 2.png" id="2_6oth8"]
 [ext_resource type="FontFile" uid="uid://c5kt0griuktvw" path="res://assets/papyrus-font-1723970133-0/papyrus.ttf" id="3_5kko0"]
 [ext_resource type="Texture2D" uid="uid://b7xf3xr52wgcm" path="res://assets/left-arrow.png" id="3_7fux7"]
+[ext_resource type="FontFile" uid="uid://co2hdt2rryk18" path="res://assets/yiroglyphics-font/Yiroglyphics-PKeJB.ttf" id="3_iuwt0"]
 [ext_resource type="Texture2D" uid="uid://d0wpiqfpx0h7w" path="res://assets/right-arrow.png" id="4_yqyqh"]
 [ext_resource type="AudioStream" uid="uid://bkqvd3awx8fwd" path="res://assets/pageturn-102978.mp3" id="5_l8qrb"]
 
@@ -15,19 +16,21 @@ bg_color = Color(0.682353, 0.580392, 0.466667, 0)
 
 [node name="Control" type="Control"]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
 anchor_bottom = 1.0
 grow_horizontal = 2
-grow_vertical = 2
+grow_vertical = 0
 mouse_filter = 1
 
 [node name="Book" type="HBoxContainer" parent="." node_paths=PackedStringArray("left_text_box", "right_text_box", "left_button", "right_button", "page_turn_sound")]
 layout_mode = 0
-offset_left = 765.0
-offset_top = 615.0
-offset_right = 1470.0
-offset_bottom = 1065.0
+offset_left = -260.0
+offset_top = -468.0
+offset_right = 445.0
+offset_bottom = -18.0
 tooltip_text = "Translation Guide"
 theme_override_constants/separation = 1
 alignment = 1
@@ -58,8 +61,9 @@ offset_right = 0.0886536
 offset_bottom = 0.0999756
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/normal_font = ExtResource("3_5kko0")
-theme_override_font_sizes/normal_font_size = 30
+theme_override_fonts/normal_font = ExtResource("3_iuwt0")
+theme_override_fonts/bold_font = ExtResource("3_5kko0")
+theme_override_font_sizes/normal_font_size = 60
 theme_override_styles/normal = SubResource("StyleBoxFlat_7ub7t")
 text = "test
 test

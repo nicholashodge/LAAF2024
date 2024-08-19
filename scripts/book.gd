@@ -10,10 +10,10 @@ var current_left_page = 0
 
 var page_data := [
 	"Table of Contents:\n1. Parts of speech\n2. Dictionary",
-	"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut",
-	"minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-	"in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat",
-	"non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+	"Lorem ipsum dolor sit amet, consectetur adipiscing elit, ut",
+	"minim veniam, quis nostrud exercitation consequat.",
+	"in voluptate velit esse cillum dolore eu fugiat nulladatat",
+	"non proident, sunt in "
 	]
 # Called when the node enters the scene tree for the first time.
 func _ready():

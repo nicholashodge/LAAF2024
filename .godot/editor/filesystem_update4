@@ -4,3 +4,11 @@ res://scenes/scale.tscn
 res://scenes/weight.tscn
 res://scenes/book.tscn
 res://scripts/scroll.gd
+res://rotationtest.gd
+res://scripts/scale_manager.gd
+res://scripts/rotator.gd
+res://scripts/weight.gd
+res://scripts/book.gd
+res://scripts/scale.gd
+res://scale_manager.gd
+res://scripts/game_manager.gd

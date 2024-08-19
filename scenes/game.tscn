@@ -8,7 +8,7 @@
 
 [node name="Scale" parent="." instance=ExtResource("3_sk0eq")]
 z_index = -1
-position = Vector2(-251, 0)
+position = Vector2(-802, -131)
 
 [node name="Scroll" parent="." instance=ExtResource("3_1jb43")]
 position = Vector2(-560, 351)

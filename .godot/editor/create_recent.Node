@@ -1,5 +1,6 @@
-RichTextLabel
+Node2D
 Sprite2D
+RichTextLabel
 AnimationPlayer
 PanelContainer
 TextureRect
@@ -11,4 +12,3 @@ Button
 TextEdit
 HBoxContainer
 StaticBody2D
-CollisionShape2D

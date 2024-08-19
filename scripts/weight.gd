@@ -1,7 +1,7 @@
 extends Area2D
 class_name WeightObject
 
-var weight:int = 5
+var weight:float = 0.5
 var is_dragging := false
 var is_hovering := false
 var offset:Vector2
@@ -34,7 +34,7 @@ func return_to_prev():
 	
 func snap_to_site(site):
 	var tween = get_tree().create_tween()
-	tween.tween_property(self, "position", site.global_position, 0.2).set_ease(Tween.EASE_OUT)
+	tween.tween_property(self, "position", site.global_position, 0.3).set_ease(Tween.EASE_OUT)
 	
 func _on_mouse_entered():
 	if not DragManager.is_dragging:
