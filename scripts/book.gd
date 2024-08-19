@@ -1,7 +1,9 @@
 extends Control
 
 @export var left_text_box:RichTextLabel
+@export var left_trans_box:RichTextLabel
 @export var right_text_box:RichTextLabel
+@export var right_trans_box:RichTextLabel
 @export var left_button:Button
 @export var right_button:Button
 @export var page_turn_sound:AudioStreamPlayer2D
@@ -9,35 +11,47 @@ extends Control
 var current_left_page = 0
 
 var page_data := [
-	"Table of Contents:\n1. Parts of speech\n2. Dictionary",
-	"Lorem ipsum dolor sit amet, consectetur adipiscing elit, ut",
-	"minim veniam, quis nostrud exercitation consequat.",
-	"in voluptate velit esse cillum dolore eu fugiat nulladatat",
-	"non proident, sunt in "
+	"!3JI^a",
+	"Death\nTheft\nFood\nGiving\nChild\nRa",
+	"'zuZ,%",#address citizen
+	"Love\nPerson\nPharaoh\nMoney\nSoldier\nCitizen",
+	"T(e;`\nd",
+	"Praise\nSoul\nAnubis\nFor\nTo\nDid",
+	"k_W]/x", #cant backslash
+	"Negation\nFrom\nAdultered\nArson\nTemple\nAlcohol",
+	"5i\ny\nK",
+	"Lied\nEnemy\nAlly\nWork"
 	]
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	if page_data.size()%2:
+	if page_data.size()%4:
+		page_data.append("")
 		page_data.append("")
 	if not current_left_page:
 		left_button.visible = false
 	left_text_box.text = page_data[0]
-	right_text_box.text = page_data[1]
+	left_trans_box.text = page_data[1]
+	right_text_box.text = page_data[2]
+	right_trans_box.text = page_data[3]
 
 func _on_last_page_pressed():
 	page_turn_sound.play()
-	current_left_page -= 2
+	current_left_page -= 4
 	left_text_box.text = page_data[current_left_page]
-	right_text_box.text = page_data[current_left_page + 1]
+	left_trans_box.text = page_data[current_left_page + 1]
+	right_text_box.text = page_data[current_left_page + 2]
+	right_trans_box.text = page_data[current_left_page + 3]
 	right_button.visible = true
 	if not current_left_page:
 		left_button.visible = false
 
 func _on_next_page_pressed():
 	page_turn_sound.play()
-	current_left_page += 2
+	current_left_page += 4
 	left_text_box.text = page_data[current_left_page]
-	right_text_box.text = page_data[current_left_page + 1]
+	left_trans_box.text = page_data[current_left_page + 1]
+	right_text_box.text = page_data[current_left_page + 2]
+	right_trans_box.text = page_data[current_left_page + 3]
 	left_button.visible = true
-	if current_left_page + 2 >= page_data.size():
+	if current_left_page + 4 >= page_data.size():
 		right_button.visible = false

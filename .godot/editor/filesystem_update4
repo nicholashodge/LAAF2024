@@ -12,3 +12,5 @@ res://scripts/book.gd
 res://scripts/scale.gd
 res://scale_manager.gd
 res://scripts/game_manager.gd
+res://scenes/character.tscn
+res://scripts/character.gd

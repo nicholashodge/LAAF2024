@@ -5,11 +5,11 @@ var weight_prefab = preload("res://scenes/weight.tscn")
 
 var active_weight:WeightObject
 
-var number_of_weights := 3 #can change for different levels (maybe 1-2 for first level)
+var number_of_weights := 1 #can change for different levels (maybe 1-2 for first level)
 signal scales_changed
 
 func setup():
-	generate_weights(3)
+	generate_weights(number_of_weights)
 
 func generate_weights(length:int):
 	#instantiate sites and add to instances deck
@@ -38,11 +38,30 @@ func _on_weight_released():
 					closest_dist = dist
 					closest_area = close_area
 			#snap to closest
-			active_weight.snap_to_site(closest_area)
-			make_weight_child_of_scale(active_weight, closest_area)
+			print("starting zone: " + str(active_weight.current_zone))
+			print(closest_area.global_position)
+			print(active_weight.global_position)
+			if active_weight.current_zone == null:
+				generate_weights(1)
+				#active_weight.position -= active_weight.global_position
+			if closest_area.is_in_group("trash"):
+				#delete weight
+				active_weight.queue_free()
 			
-			scales_changed.emit(active_weight, closest_area.is_in_group("left"))
+			if closest_area.is_in_group("left"):
+				active_weight.current_zone = Zone.LEFT
+				scales_changed.emit(active_weight, true)
+			elif closest_area.is_in_group("right"):
+				active_weight.current_zone = Zone.RIGHT
+				scales_changed.emit(active_weight, false)
+			#active_weight.snap_to_site(closest_area)
+			active_weight.position -= active_weight.global_position
+			print(active_weight.global_position)
+			make_weight_child_of_scale(active_weight, closest_area)
+
+				
 			active_weight = null
+			
 		else:
 			cancel_move()
 
@@ -54,7 +73,13 @@ func cancel_move():
 	active_weight = null
 
 func make_weight_child_of_scale(node, new_parent):
-	var old_parent = get_tree().get_root().get_node("Game")
+	var old_parent = node.get_parent()
 	old_parent.remove_child(node)
 	new_parent.add_child(node)
 	node.set_owner(new_parent)
+
+enum Zone {
+	SPAWN,
+	LEFT,
+	RIGHT
+}

@@ -6,6 +6,7 @@ var is_dragging := false
 var is_hovering := false
 var offset:Vector2
 var starting_pos:Vector2
+var current_zone
 
 signal selected(weight:WeightObject)
 signal released()
